@@ -1,0 +1,259 @@
+/*
+ * main.c
+ *
+ *  Created on: Jan 31, 2020
+ *      Author: eslam
+ */
+#include<avr/io.h>
+#include"../Lib/datatype.h"
+#include"../Lib/Bit_math.h"
+#include"Lcd_int.h"
+#define F_CPU 8000000
+#include<util/delay.h>
+
+
+int main (void)
+{
+
+	Lcd_vidINIT();
+
+
+	for(;;)
+	{
+		Lcd_vidSendCommand(0x80);
+		Lcd_vidWriteChar('E');
+		_delay_ms(1000);
+		Lcd_vidSendCommand(0x01);
+
+		//=======================================
+		Lcd_vidSendCommand(0xc1);
+		Lcd_vidWriteChar('E');
+		Lcd_vidSendCommand(0x80);
+		Lcd_vidWriteChar('S');
+		_delay_ms(1000);
+		Lcd_vidSendCommand(0x01);
+
+		//========================================
+		Lcd_vidSendCommand(0x82);
+		Lcd_vidWriteChar('E');
+		Lcd_vidSendCommand(0xc1);
+		Lcd_vidWriteChar('S');
+		Lcd_vidSendCommand(0x80);
+		Lcd_vidWriteChar('L');
+		_delay_ms(1000);
+		Lcd_vidSendCommand(0x01);
+		//=========================================
+		Lcd_vidSendCommand(0xc3);
+		Lcd_vidWriteChar('E');
+		Lcd_vidSendCommand(0x82);
+		Lcd_vidWriteChar('S');
+		Lcd_vidSendCommand(0xc1);
+		Lcd_vidWriteChar('L');
+		Lcd_vidSendCommand(0x80);
+		Lcd_vidWriteChar('A');
+		_delay_ms(1000);
+		Lcd_vidSendCommand(0x01);
+		//========================================
+		Lcd_vidSendCommand(0x84);
+		Lcd_vidWriteChar('E');
+		Lcd_vidSendCommand(0xc3);
+		Lcd_vidWriteChar('S');
+		Lcd_vidSendCommand(0x82);
+		Lcd_vidWriteChar('L');
+		Lcd_vidSendCommand(0xc1);
+		Lcd_vidWriteChar('A');
+		Lcd_vidSendCommand(0x80);
+		Lcd_vidWriteChar('M');
+		_delay_ms(1000);
+		Lcd_vidSendCommand(0x01);
+		//========================================
+		Lcd_vidSendCommand(0xc5);
+		Lcd_vidWriteChar('E');
+		Lcd_vidSendCommand(0x84);
+		Lcd_vidWriteChar('S');
+		Lcd_vidSendCommand(0xc3);
+		Lcd_vidWriteChar('L');
+		Lcd_vidSendCommand(0x82);
+		Lcd_vidWriteChar('A');
+		Lcd_vidSendCommand(0xc1);
+		Lcd_vidWriteChar('M');
+		_delay_ms(1000);
+		Lcd_vidSendCommand(0x01);
+		//========================================
+		Lcd_vidSendCommand(0x86);
+		Lcd_vidWriteChar('E');
+		Lcd_vidSendCommand(0xc5);
+		Lcd_vidWriteChar('S');
+		Lcd_vidSendCommand(0x84);
+		Lcd_vidWriteChar('L');
+		Lcd_vidSendCommand(0xc3);
+		Lcd_vidWriteChar('A');
+		Lcd_vidSendCommand(0x82);
+		Lcd_vidWriteChar('M');
+		_delay_ms(1000);
+		Lcd_vidSendCommand(0x01);
+		//========================================
+		Lcd_vidSendCommand(0xc7);
+		Lcd_vidWriteChar('E');
+		Lcd_vidSendCommand(0x86);
+		Lcd_vidWriteChar('S');
+		Lcd_vidSendCommand(0xc5);
+		Lcd_vidWriteChar('L');
+		Lcd_vidSendCommand(0x84);
+		Lcd_vidWriteChar('A');
+		Lcd_vidSendCommand(0xc3);
+		Lcd_vidWriteChar('M');
+		_delay_ms(1000);
+		Lcd_vidSendCommand(0x01);
+		//========================================
+		Lcd_vidSendCommand(0x88);
+		Lcd_vidWriteChar('E');
+		Lcd_vidSendCommand(0xc7);
+		Lcd_vidWriteChar('S');
+		Lcd_vidSendCommand(0x86);
+		Lcd_vidWriteChar('L');
+		Lcd_vidSendCommand(0xc5);
+		Lcd_vidWriteChar('A');
+		Lcd_vidSendCommand(0x84);
+		Lcd_vidWriteChar('M');
+		_delay_ms(1000);
+		Lcd_vidSendCommand(0x01);
+		//========================================
+		Lcd_vidSendCommand(0xc9);
+		Lcd_vidWriteChar('E');
+		Lcd_vidSendCommand(0x88);
+		Lcd_vidWriteChar('S');
+		Lcd_vidSendCommand(0xc7);
+		Lcd_vidWriteChar('L');
+		Lcd_vidSendCommand(0x86);
+		Lcd_vidWriteChar('A');
+		Lcd_vidSendCommand(0xc5);
+		Lcd_vidWriteChar('M');
+		_delay_ms(1000);
+		Lcd_vidSendCommand(0x01);
+		//========================================
+		Lcd_vidSendCommand(0x8A);
+		Lcd_vidWriteChar('E');
+		Lcd_vidSendCommand(0xc9);
+		Lcd_vidWriteChar('S');
+		Lcd_vidSendCommand(0x88);
+		Lcd_vidWriteChar('L');
+		Lcd_vidSendCommand(0xc7);
+		Lcd_vidWriteChar('A');
+		Lcd_vidSendCommand(0x86);
+		Lcd_vidWriteChar('M');
+		_delay_ms(1000);
+		Lcd_vidSendCommand(0x01);
+		//========================================
+		Lcd_vidSendCommand(0xcB);
+		Lcd_vidWriteChar('E');
+		Lcd_vidSendCommand(0x8A);
+		Lcd_vidWriteChar('S');
+		Lcd_vidSendCommand(0xc9);
+		Lcd_vidWriteChar('L');
+		Lcd_vidSendCommand(0x88);
+		Lcd_vidWriteChar('A');
+		Lcd_vidSendCommand(0xc7);
+		Lcd_vidWriteChar('M');
+		_delay_ms(1000);
+		Lcd_vidSendCommand(0x01);
+		//========================================
+		Lcd_vidSendCommand(0x8C);
+		Lcd_vidWriteChar('E');
+		Lcd_vidSendCommand(0xcB);
+		Lcd_vidWriteChar('S');
+		Lcd_vidSendCommand(0x8A);
+		Lcd_vidWriteChar('L');
+		Lcd_vidSendCommand(0xc9);
+		Lcd_vidWriteChar('A');
+		Lcd_vidSendCommand(0x88);
+		Lcd_vidWriteChar('M');
+		_delay_ms(1000);
+		Lcd_vidSendCommand(0x01);
+		//========================================
+		Lcd_vidSendCommand(0xcD);
+		Lcd_vidWriteChar('E');
+		Lcd_vidSendCommand(0x8C);
+		Lcd_vidWriteChar('S');
+		Lcd_vidSendCommand(0xcB);
+		Lcd_vidWriteChar('L');
+		Lcd_vidSendCommand(0x8A);
+		Lcd_vidWriteChar('A');
+		Lcd_vidSendCommand(0xc9);
+		Lcd_vidWriteChar('M');
+		_delay_ms(1000);
+		Lcd_vidSendCommand(0x01);
+		//========================================
+		Lcd_vidSendCommand(0x8E);
+		Lcd_vidWriteChar('E');
+		Lcd_vidSendCommand(0xcD);
+		Lcd_vidWriteChar('S');
+		Lcd_vidSendCommand(0x8C);
+		Lcd_vidWriteChar('L');
+		Lcd_vidSendCommand(0xcB);
+		Lcd_vidWriteChar('A');
+		Lcd_vidSendCommand(0x8A);
+		Lcd_vidWriteChar('M');
+		_delay_ms(1000);
+		Lcd_vidSendCommand(0x01);
+		//========================================
+		Lcd_vidSendCommand(0xcF);
+		Lcd_vidWriteChar('E');
+		Lcd_vidSendCommand(0x8E);
+		Lcd_vidWriteChar('S');
+		Lcd_vidSendCommand(0xcD);
+		Lcd_vidWriteChar('L');
+		Lcd_vidSendCommand(0x8C);
+		Lcd_vidWriteChar('A');
+		Lcd_vidSendCommand(0xcB);
+		Lcd_vidWriteChar('M');
+		_delay_ms(1000);
+		Lcd_vidSendCommand(0x01);
+		//========================================
+		Lcd_vidSendCommand(0xcF);
+		Lcd_vidWriteChar('S');
+		Lcd_vidSendCommand(0x8E);
+		Lcd_vidWriteChar('L');
+		Lcd_vidSendCommand(0xcD);
+		Lcd_vidWriteChar('A');
+		Lcd_vidSendCommand(0x8C);
+		Lcd_vidWriteChar('M');
+		_delay_ms(1000);
+		Lcd_vidSendCommand(0x01);
+		//========================================
+		Lcd_vidSendCommand(0xcF);
+		Lcd_vidWriteChar('L');
+		Lcd_vidSendCommand(0x8E);
+		Lcd_vidWriteChar('A');
+		Lcd_vidSendCommand(0xcD);
+		Lcd_vidWriteChar('M');
+		_delay_ms(1000);
+		Lcd_vidSendCommand(0x01);
+		//========================================
+		Lcd_vidSendCommand(0xcF);
+		Lcd_vidWriteChar('A');
+		Lcd_vidSendCommand(0x8E);
+		Lcd_vidWriteChar('M');
+		_delay_ms(1000);
+		Lcd_vidSendCommand(0x01);
+		//========================================
+		Lcd_vidSendCommand(0xcF);
+		Lcd_vidWriteChar('M');
+		_delay_ms(1000);
+		Lcd_vidSendCommand(0x01);
+
+
+	}
+
+
+
+	while(1)
+	{
+
+	}
+
+
+	return (0);
+
+}
+
